@@ -10,6 +10,9 @@ gcloud auth login
 # change GCP project
 gcloud config set project
 
+# IMPORTANT STEP (change location to your registry region here US_CENTRAL1)
+gcloud auth configure-docker us-central1-docker.pkg.dev
+
 (optional Build Docker Image - docker build -t cloudrun-pubsub-bigquery:latest .)
 
 gcloud auth print-access-token | docker login -u oauth2accesstoken -password-stdin us-central1-docker.pkg.dev 

@@ -1,7 +1,7 @@
 # (For renaming Docker Images)
 docker tag registry.fxxd.com/serverless/sample-python-helloworld us-central1-docker.pkg.dev/prj-xxxxxxxxx/fxxd-container-images/sample-py-helloworld
 
-# (For renaming Docker Images with new tag)
+# (Alternatively For renaming Docker Images with new tag)
 docker tag registry.fxxd.com/serverless/sample-python-helloworld us-central1-docker.pkg.dev/prj-xxxxxxxxx/fxxd-container-images/sample-py-helloworld:1.0.0
 
 # Pushing Image to Google Artifactory
@@ -13,9 +13,11 @@ gcloud config set project
 # IMPORTANT STEP (change location to your registry region here US_CENTRAL1)
 gcloud auth configure-docker us-central1-docker.pkg.dev
 
-(optional Build Docker Image - docker build -t cloudrun-pubsub-bigquery:latest .)
+# (optional Build Docker Image )
+docker build -t cloudrun-pubsub-bigquery:latest .
 
 gcloud auth print-access-token | docker login -u oauth2accesstoken -password-stdin us-central1-docker.pkg.dev 
+# Docker Push to Google Artifact Registry
 docker push us-central1-docker.pkg.dev/prj-xxxxxxxxxxx/fxxd-container-images/sample-py-helloworld 
 
 # Alternative

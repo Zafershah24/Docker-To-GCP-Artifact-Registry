@@ -22,5 +22,7 @@ docker push us-central1-docker.pkg.dev/prj-xxxxxxxxxxx/fxxd-container-images/sam
 
 # Alternative
 (docker login -u oauth2accesstoken -p "$(gcloud auth print-access-token)" https://gcr.io
+
  docker tag cloudrun-pubsub-bigquery gcr.io/prj-dxxxxxxxxx/cloudrun-pubsub-bigquery
+ 
  docker push gcr.io/prj-xxxxxxxx/cloudrun-pubsub-bigquery)

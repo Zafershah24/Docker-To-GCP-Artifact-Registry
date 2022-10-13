@@ -14,7 +14,7 @@ gcloud config set project
 gcloud auth configure-docker us-central1-docker.pkg.dev
 
 # (optional Build Docker Image )
-docker build -t cloudrun-pubsub-bigquery:latest .
+docker build .
 
 gcloud auth print-access-token | docker login -u oauth2accesstoken -password-stdin us-central1-docker.pkg.dev 
 # Docker Push to Google Artifact Registry

@@ -8,13 +8,13 @@ docker tag registry.fxxd.com/serverless/sample-python-helloworld us-central1-doc
 gcloud auth login
 
 # change GCP project
-gcloud config set project
+gcloud config set project <project-id>
 
 # IMPORTANT STEP (change location to your registry region here US_CENTRAL1)
 gcloud auth configure-docker us-central1-docker.pkg.dev
 
 # (optional Build Docker Image )
-docker build .
+docker build -t cloudrun-pubsub-name:latest .
 
 gcloud auth print-access-token | docker login -u oauth2accesstoken -password-stdin us-central1-docker.pkg.dev 
 # Docker Push to Google Artifact Registry

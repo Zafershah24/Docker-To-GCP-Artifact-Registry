@@ -1,3 +1,10 @@
+# GCP Login
+gcloud auth login
+gcloud config set project <project-id>
+
+gcloud auth configure-docker us-central1-docker.pkg.dev
+
+
 # (For renaming Docker Images)
 docker tag registry.fxxd.com/serverless/sample-python-helloworld us-central1-docker.pkg.dev/prj-xxxxxxxxx/fxxd-container-images/sample-py-helloworld
 
